@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "title": "Slurry Tanker Post Box",
+      "image": "images/section1-postbox.jpeg",
+      "alt": "Personalised slurry tanker wedding post box with flowers and Mr and Mrs wellies",
+      "photoLabel": "Section 1 · Slurry Tanker Post Box",
+      "description": "Our Slurry Tanker Post Box is 6½ft in length and 3ft high. It comes with a crate, Mr & Mrs wellies and flowers. A drawer at the back is secured with a lock and key to keep your cards safe.",
+      "note": "A charming country-inspired detail, made to collect the cards and well wishes from your guests."
+    },
+    {
+      "title": "Tractor Seating Plan",
+      "image": "images/section2-tractor-seating.jpeg",
+      "alt": "Personalised tractor-shaped wedding seating plan with flowers and lantern",
+      "photoLabel": "Section 2 · Tractor Seating Plan",
+      "description": "Our Tractor Seating Plan stands 4ft high and comes personalised, accompanied by a personalised milk can with flowers and a crate with a lantern.",
+      "note": "A personal, rustic way to help guests find their seats and start celebrating."
+    },
+    {
+      "title": "Large Wooden Welcome Sign",
+      "image": "images/section3-wooden-welcome.jpeg",
+      "alt": "Rustic wooden wedding welcome sign decorated with white flowers",
+      "photoLabel": "Section 3 · Large Wooden Welcome Sign",
+      "description": "Our large wooden Welcome Sign is perfect for welcoming your guests into the hotel for your reception. It can be styled with milk cans or large wooden lanterns.",
+      "note": "A lovely first impression and a warm welcome to your celebration."
+    },
+    {
+      "title": "Rally Post Box",
+      "image": "images/section4-rally-postbox.jpeg",
+      "alt": "Rally-themed wedding post box using a personalised tyre and tool chest",
+      "photoLabel": "Section 4 · Rally Post Box",
+      "description": "The tyre is a real tyre and comes personalised. A door at the back is secured with a lock and key. It sits on top of a tool chest and is accompanied by an oil can with flowers and a chequered flag.",
+      "note": "A fun, motorsport-inspired statement piece with a secure place for your cards."
+    },
+    {
+      "title": "GAA Post Box",
+      "image": "images/section5-gaa-postbox.jpeg",
+      "alt": "GAA wedding card post box with personalised jersey, ball and county flags",
+      "photoLabel": "Section 5 · GAA Post Box",
+      "description": "For those who love the game: a real O’Neills ball sits on top of a wooden box with a secure door at the back. Cards are posted through the ball and fall into the box below. It also comes with a hand-painted jersey in your county colours, split colours for different counties, or club colours. The personalised jersey is yours to keep as a memento of your day.",
+      "note": "A personal tribute to your team, your county and the story you share."
+    },
+    {
+      "title": "Box Welcome Sign",
+      "image": "images/section5b-box-welcome.jpeg",
+      "alt": "Personalised white wedding welcome sign with lanterns and floral decorations",
+      "photoLabel": "Section 5b · Box Welcome Sign",
+      "description": "Our Box Welcome Sign is personalised and accompanied by two large lanterns and small cans with flowers. It is perfect outside the church or at your reception to welcome your guests as they enter.",
+      "note": "Personalised details and floral touches make this welcome feel like yours."
+    },
+    {
+      "title": "LOVE Letters & Cake Stand",
+      "image": "images/section6-love-letters-1.jpeg",
+      "alt": "Wedding cake displayed on an illuminated glass cake stand",
+      "photoLabel": "Section 6 · LOVE Letters & Cake Stand · 2 photos",
+      "description": "Our LOVE letters and cake stand measure 10ft in length and 3½ft high. They are surrounded by candles, with flowers on top of the letter L. Glass shelves sit on top of the letters V and E, with lights and crystals underneath to illuminate your cake. There is also plenty of room for your memory photos.",
+      "note": "A beautiful focal point for your cake, flowers and favourite memories."
+    }
+  ]
+}
