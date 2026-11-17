@@ -6,8 +6,6 @@
 <meta name="theme-color" content="#fcf7fa">
 <meta name="description" content="Handmade wedding hire and thoughtful finishing touches in Donegal, Ireland. Discover wedding post boxes, welcome signs, seating plans and LOVE letters from Valerations.">
 <title>Valerations | Handmade Wedding Hire in Donegal</title>
-<!-- Netlify Identity Widget for CMS Authentication -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 :root{--cream:#fcf7fa;--paper:#fffefe;--ink:#403747;--muted:#655c70;--green:#725276;--sage:#f3e7f1;--gold:#9b668c;--line:#eadde8;--shadow:0 14px 40px rgba(98,67,104,.10)}
 *{box-sizing:border-box}
@@ -20,7 +18,7 @@ button,input{font:inherit}
 header{background:rgba(252,247,250,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
 .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font-family:Georgia,'Times New Roman',serif;font-size:1.85rem;letter-spacing:.04em;text-decoration:none;font-weight:normal}
-.brand span{display:block;font: .67rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:-3px}
+.brand span{display:block;font:.67rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:-3px}
 .navlinks{display:flex;align-items:center;gap:22px}
 .navlinks a{text-decoration:none;font-size:.9rem;color:var(--muted)}
 .navlinks a:hover{color:var(--green)}
@@ -50,19 +48,29 @@ section{scroll-margin-top:100px}
 .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:0 auto 30px;max-width:1000px}
 .tab{background:#fffafd;border:1px solid #e5d5e4;border-radius:3px;color:#5c4d68;padding:10px 15px;cursor:pointer;font-size:.88rem;transition:all .2s}
 .tab:hover,.tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:white}
-.product-panel{display:grid;margin-bottom:24px}
+.product-panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center;background:var(--paper);border:1px solid var(--line);padding:clamp(20px,4vw,46px);box-shadow:var(--shadow);border-radius:4px;margin-bottom:24px}
 .product-panel:last-child{margin-bottom:0}
-.product-panel{display:none;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center;background:var(--paper);border:1px solid var(--line);padding:clamp(20px,4vw,46px);box-shadow:var(--shadow);border-radius:4px}
-.product-panel.active{display:grid}
 .gallery{min-width:0}
 .photo-frame{min-height:340px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(145deg,#f6e8f1,#f0fafa);border:1px solid #e9dce8;position:relative;overflow:hidden}
 .photo-frame img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;display:block}
-.media-grid{display:grid;grid-template-columns:1fr;gap:10px;min-width:0}.media-grid img,.media-grid video{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;background:#f8f1f7;border:1px solid #e9dce8;border-radius:2px}.media-grid img{aspect-ratio:4/3;object-fit:contain;max-height:560px}.media-grid:has(img:nth-child(2)){grid-template-columns:1fr 1fr}.media-grid:has(img:nth-child(2)) img{height:100%;aspect-ratio:3/4;object-fit:cover}@media(max-width:760px){.media-grid:has(img:nth-child(2)){grid-template-columns:1fr 1fr}}.photo-count{font-size:.78rem;color:var(--muted);margin-top:10px}
+.photo-placeholder{max-width:290px;color:#655c70}
+.photo-placeholder .symbol{font-size:2.6rem;color:var(--green);display:block;margin-bottom:10px}
+.photo-placeholder strong{display:block;font-family:Georgia,serif;font-size:1.35rem;font-weight:normal;margin-bottom:7px}
+.photo-placeholder small{font-size:.83rem;line-height:1.5;display:block}
+.media-grid{display:grid;grid-template-columns:1fr;gap:10px;min-width:0}
+.media-grid img,.media-grid video{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;background:#f8f1f7;border:1px solid #e9dce8;border-radius:2px}
+.media-grid img{aspect-ratio:4/3;object-fit:contain;max-height:560px}
+.media-grid:has(img:nth-child(2)){grid-template-columns:1fr 1fr}
+.media-grid:has(img:nth-child(2)) img{height:100%;aspect-ratio:3/4;object-fit:cover}
+.photo-count{font-size:.78rem;color:var(--muted);margin-top:10px}
 .product-copy .number{font-size:.8rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
 .product-copy h3{font-size:clamp(1.8rem,3vw,2.7rem);margin:10px 0 18px}
 .product-copy p{color:var(--muted);white-space:normal}
 .product-copy .note{border-left:2px solid var(--gold);padding-left:14px;margin-top:22px;font-size:.91rem}
 .product-copy .actions{justify-content:flex-start}
+.dots{display:flex;gap:7px;margin-top:12px}
+.dot{width:7px;height:7px;border-radius:50%;background:#e1cbdc}
+.dot:first-child{background:var(--green)}
 .story{background:linear-gradient(115deg,#f8eaf2,#eee9fa 58%,#e9f8f7);padding:70px 0}
 .story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
 .story-mark{min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid #ddcce2;background:rgba(255,255,255,.35);padding:24px}
@@ -81,107 +89,238 @@ footer{background:#65496e;color:#fff9fc;padding:25px 0}
 footer p{margin:0;color:#f2e4f1}
 footer a{color:#fff;text-decoration:none}
 @media(max-width:760px){
- .wrap{width:min(100% - 28px,1120px)}.nav{min-height:70px}.brand{font-size:1.55rem}
- .menu-toggle{display:block}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:16px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:12px}
- .navlinks.open{display:flex}.navlinks a{padding:5px 0}.hero{padding:58px 0 52px}
- .product-panel.active{grid-template-columns:1fr}.collection{padding:55px 0 60px}.story{padding:55px 0}
- .story-grid{grid-template-columns:1fr;gap:28px}.story-mark{min-height:180px}
- .intro-strip .wrap{gap:10px 22px}.tab{padding:9px 11px;font-size:.82rem}
+.wrap{width:min(100% - 28px,1120px)}
+.nav{min-height:70px}
+.brand{font-size:1.55rem}
+.menu-toggle{display:block}
+.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:16px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:12px}
+.navlinks.open{display:flex}
+.navlinks a{padding:5px 0}
+.hero{padding:58px 0 52px}
+.product-panel{grid-template-columns:1fr}
+.photo-frame{min-height:260px}
+.collection{padding:55px 0 60px}
+.story{padding:55px 0}
+.story-grid{grid-template-columns:1fr;gap:28px}
+.story-mark{min-height:180px}
+.intro-strip .wrap{gap:10px 22px}
+.tab{padding:9px 11px;font-size:.82rem}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*:before,*:after{transition:none!important}
+}
 </style>
 </head>
 <body>
 <div class="topbar">HANDMADE WITH LOVE · DONEGAL, IRELAND</div>
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="#home">Valerations<span>Wedding Hire</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
-    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#collection">Our Hire Items</a><a href="#our-story">Our Story</a><a href="#contact">Enquiries</a>
-    </nav>
-  </div>
+<div class="wrap nav">
+<a class="brand" href="#home">Valerations<span>Wedding Hire</span></a>
+<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+<nav class="navlinks" id="navlinks" aria-label="Main navigation">
+<a href="#home">Home</a>
+<a href="#collection">Our Hire Items</a>
+<a href="#our-story">Our Story</a>
+<a href="#contact">Enquiries</a>
+</nav>
+</div>
 </header>
 <main>
 <section class="hero" id="home">
-  <div class="wrap">
-    <div class="eyebrow">Thoughtful details · Beautiful memories</div>
-    <h1>Little details.<br>Big memories.</h1>
-    <p>A husband-and-wife team in Donegal, hand-making and decorating special pieces to help make your wedding day truly yours.</p>
-    <div class="actions"><a class="btn primary" href="#collection">Explore our hire items <span aria-hidden="true">↓</span></a><a class="btn secondary" href="#contact">Make an enquiry</a></div>
-    <div class="social-links" aria-label="Follow Valerations on social media"><a class="btn secondary" href="https://www.facebook.com/Valerations/" target="_blank" rel="noopener noreferrer" aria-label="Visit Valerations on Facebook">Explore Facebook Moments ↗</a><a class="btn secondary" href="https://www.tiktok.com/@valerations/video/7652338887406177558" target="_blank" rel="noopener noreferrer" aria-label="Watch Valerations on TikTok">Catch Our TikTok Vibes ↗</a></div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">Thoughtful details · Beautiful memories</div>
+<h1>Little details.<br>Big memories.</h1>
+<p>A husband-and-wife team in Donegal, hand-making and decorating special pieces to help make your wedding day truly yours.</p>
+<div class="actions">
+<a class="btn primary" href="#collection">Explore our hire items <span aria-hidden="true">↓</span></a>
+<a class="btn secondary" href="#contact">Make an enquiry</a>
+</div>
+<div class="social-links" aria-label="Follow Valerations on social media">
+<a class="btn secondary" href="https://www.facebook.com/Valerations/" target="_blank" rel="noopener noreferrer" aria-label="Visit Valerations on Facebook">Explore Facebook Moments ↗</a>
+<a class="btn secondary" href="https://www.tiktok.com/@valerations/video/7652338887406177558" target="_blank" rel="noopener noreferrer" aria-label="Watch Valerations on TikTok">Catch Our TikTok Vibes ↗</a>
+</div>
+</div>
 </section>
-<div class="intro-strip"><div class="wrap"><span>Handmade with care</span><span>Personalised for your day</span><span>Proudly based in Donegal</span></div></div>
-
+<div class="intro-strip">
+<div class="wrap">
+<span>Handmade with care</span>
+<span>Personalised for your day</span>
+<span>Proudly based in Donegal</span>
+</div>
+</div>
 <section class="collection" id="collection">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">The collection</div>
-      <h2>Made for your moment</h2>
-      <p>Explore each piece below. Every item has its own tab and photo gallery.</p>
-    </div>
-    <nav class="tabs" aria-label="Jump to wedding hire items">
-      <button class="tab" type="button" data-index="0">Slurry Tanker Post Box</button>
-      <button class="tab" type="button" data-index="1">Tractor Seating Plan</button>
-      <button class="tab" type="button" data-index="2">Wooden Welcome Sign</button>
-      <button class="tab" type="button" data-index="3">Rally Post Box</button>
-      <button class="tab" type="button" data-index="4">GAA Post Box</button>
-      <button class="tab" type="button" data-index="5">Box Welcome Sign</button>
-      <button class="tab" type="button" data-index="6">LOVE Letters & Cake Stand</button>
-    </nav>
-    <div id="panels">
-      <article class="product-panel" id="panel-0">
-        <div class="gallery"><div class="media-grid"><img src="images/section1-postbox.jpeg" alt="Personalised slurry tanker wedding post box with flowers and Mr and Mrs wellies" loading="lazy"></div><div class="photo-count">Section 1 · Slurry Tanker Post Box</div></div>
-        <div class="product-copy"><div class="number">01 / Wedding keepsakes</div><h3>Slurry Tanker Post Box</h3><p>Our Slurry Tanker Post Box is 6½ft in length and 3ft high. It comes with a crate, Mr & Mrs wellies and flowers. A drawer at the back is secured with a lock and key to keep your cards safe.</p><p class="note">A charming country-inspired detail, made to collect the cards and well wishes from your guests.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Slurry Tanker Post Box">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-1">
-        <div class="gallery"><div class="media-grid"><img src="images/section2-tractor-seating.jpeg" alt="Personalised tractor-shaped wedding seating plan with flowers and lantern" loading="lazy"></div><div class="photo-count">Section 2 · Tractor Seating Plan</div></div>
-        <div class="product-copy"><div class="number">02 / Find your seat</div><h3>Tractor Seating Plan</h3><p>Our Tractor Seating Plan stands 4ft high and comes personalised, accompanied by a personalised milk can with flowers and a crate with a lantern.</p><p class="note">A personal, rustic way to help guests find their seats and start celebrating.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Tractor Seating Plan">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-2">
-        <div class="gallery"><div class="media-grid"><img src="images/section3-wooden-welcome.jpeg" alt="Rustic wooden wedding welcome sign decorated with white flowers" loading="lazy"></div><div class="photo-count">Section 3 · Large Wooden Welcome Sign</div></div>
-        <div class="product-copy"><div class="number">03 / A warm welcome</div><h3>Large Wooden Welcome Sign</h3><p>Our large wooden Welcome Sign is perfect for welcoming your guests into the hotel for your reception. It can be styled with milk cans or large wooden lanterns.</p><p class="note">A lovely first impression and a warm welcome to your celebration.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Large Wooden Welcome Sign">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-3">
-        <div class="gallery"><div class="media-grid"><img src="images/section4-rally-postbox.jpeg" alt="Rally-themed wedding post box using a personalised tyre and tool chest" loading="lazy"></div><div class="photo-count">Section 4 · Rally Post Box</div></div>
-        <div class="product-copy"><div class="number">04 / For the rally fans</div><h3>Rally Post Box</h3><p>The tyre is a real tyre and comes personalised. A door at the back is secured with a lock and key. It sits on top of a tool chest and is accompanied by an oil can with flowers and a chequered flag.</p><p class="note">A fun, motorsport-inspired statement piece with a secure place for your cards.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Rally Post Box">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-4">
-        <div class="gallery"><div class="media-grid"><img src="images/section5-gaa-postbox.jpeg" alt="GAA wedding card post box with personalised jersey, ball and county flags" loading="lazy"></div><div class="photo-count">Section 5 · GAA Post Box</div></div>
-        <div class="product-copy"><div class="number">05 / For the love of the game</div><h3>GAA Post Box</h3><p>For those who love the game: a real O’Neills ball sits on top of a wooden box with a secure door at the back. Cards are posted through the ball and fall into the box below. It also comes with a hand-painted jersey in your county colours, split colours for different counties, or club colours. The personalised jersey is yours to keep as a memento of your day.</p><p class="note">A personal tribute to your team, your county and the story you share.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="GAA Post Box">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-5">
-        <div class="gallery"><div class="media-grid"><img src="images/section5b-box-welcome.jpeg" alt="Personalised white wedding welcome sign with lanterns and floral decorations" loading="lazy"></div><div class="photo-count">Section 5b · Box Welcome Sign</div></div>
-        <div class="product-copy"><div class="number">06 / Welcome in style</div><h3>Box Welcome Sign</h3><p>Our Box Welcome Sign is personalised and accompanied by two large lanterns and small cans with flowers. It is perfect outside the church or at your reception to welcome your guests as they enter.</p><p class="note">Personalised details and floral touches make this welcome feel like yours.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Box Welcome Sign">Enquire about this item</a></div></div>
-      </article>
-      <article class="product-panel" id="panel-6">
-        <div class="gallery"><div class="media-grid"><img src="images/section6-love-letters-1.jpeg" alt="Wedding cake displayed on an illuminated glass cake stand" loading="lazy"><img src="images/section6-love-letters-2.jpeg" alt="Large white LOVE letters with wedding flowers, candles and cake stand" loading="lazy"></div><div class="photo-count">Section 6 · LOVE Letters & Cake Stand · 2 photos</div></div>
-        <div class="product-copy"><div class="number">07 / The centrepiece</div><h3>LOVE Letters & Cake Stand</h3><p>Our LOVE letters and cake stand measure 10ft in length and 3½ft high. They are surrounded by candles, with flowers on top of the letter L. Glass shelves sit on top of the letters V and E, with lights and crystals underneath to illuminate your cake. There is also plenty of room for your memory photos.</p><p class="note">A beautiful focal point for your cake, flowers and favourite memories.</p><div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="LOVE Letters & Cake Stand">Enquire about this item</a></div></div>
-      </article>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">The collection</div>
+<h2>Made for your moment</h2>
+<p>Explore each piece below. Every item has its own tab and photo gallery.</p>
+</div>
+<nav class="tabs" aria-label="Jump to wedding hire items">
+<button class="tab" type="button" data-index="0">Slurry Tanker Post Box</button>
+<button class="tab" type="button" data-index="1">Tractor Seating Plan</button>
+<button class="tab" type="button" data-index="2">Wooden Welcome Sign</button>
+<button class="tab" type="button" data-index="3">Rally Post Box</button>
+<button class="tab" type="button" data-index="4">GAA Post Box</button>
+<button class="tab" type="button" data-index="5">Box Welcome Sign</button>
+<button class="tab" type="button" data-index="6">LOVE Letters & Cake Stand</button>
+</nav>
+<div id="panels">
+<article class="product-panel" id="panel-0">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section1-postbox.jpeg" alt="Personalised slurry tanker wedding post box with flowers and Mr and Mrs wellies" loading="lazy">
+</div>
+<div class="photo-count">Section 1 · Slurry Tanker Post Box</div>
+</div>
+<div class="product-copy">
+<div class="number">01 / Wedding keepsakes</div>
+<h3>Slurry Tanker Post Box</h3>
+<p>Our Slurry Tanker Post Box is 6½ft in length and 3ft high. It comes with a crate, Mr & Mrs wellies and flowers. A drawer at the back is secured with a lock and key to keep your cards safe.</p>
+<p class="note">A charming country-inspired detail, made to collect the cards and well wishes from your guests.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Slurry Tanker Post Box">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-1">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section2-tractor-seating.jpeg" alt="Personalised tractor-shaped wedding seating plan with flowers and lantern" loading="lazy">
+</div>
+<div class="photo-count">Section 2 · Tractor Seating Plan</div>
+</div>
+<div class="product-copy">
+<div class="number">02 / Find your seat</div>
+<h3>Tractor Seating Plan</h3>
+<p>Our Tractor Seating Plan stands 4ft high and comes personalised, accompanied by a personalised milk can with flowers and a crate with a lantern.</p>
+<p class="note">A personal, rustic way to help guests find their seats and start celebrating.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Tractor Seating Plan">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-2">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section3-wooden-welcome.jpeg" alt="Rustic wooden wedding welcome sign decorated with white flowers" loading="lazy">
+</div>
+<div class="photo-count">Section 3 · Large Wooden Welcome Sign</div>
+</div>
+<div class="product-copy">
+<div class="number">03 / A warm welcome</div>
+<h3>Large Wooden Welcome Sign</h3>
+<p>Our large wooden Welcome Sign is perfect for welcoming your guests into the hotel for your reception. It can be styled with milk cans or large wooden lanterns.</p>
+<p class="note">A lovely first impression and a warm welcome to your celebration.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Large Wooden Welcome Sign">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-3">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section4-rally-postbox.jpeg" alt="Rally-themed wedding post box using a personalised tyre and tool chest" loading="lazy">
+</div>
+<div class="photo-count">Section 4 · Rally Post Box</div>
+</div>
+<div class="product-copy">
+<div class="number">04 / For the rally fans</div>
+<h3>Rally Post Box</h3>
+<p>The tyre is a real tyre and comes personalised. A door at the back is secured with a lock and key. It sits on top of a tool chest and is accompanied by an oil can with flowers and a chequered flag.</p>
+<p class="note">A fun, motorsport-inspired statement piece with a secure place for your cards.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Rally Post Box">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-4">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section5-gaa-postbox.jpeg" alt="GAA wedding card post box with personalised jersey, ball and county flags" loading="lazy">
+</div>
+<div class="photo-count">Section 5 · GAA Post Box</div>
+</div>
+<div class="product-copy">
+<div class="number">05 / For the love of the game</div>
+<h3>GAA Post Box</h3>
+<p>For those who love the game: a real O’Neills ball sits on top of a wooden box with a secure door at the back. Cards are posted through the ball and fall into the box below. It also comes with a hand-painted jersey in your county colours, split colours for different counties, or club colours. The personalised jersey is yours to keep as a memento of your day.</p>
+<p class="note">A personal tribute to your team, your county and the story you share.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="GAA Post Box">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-5">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section5b-box-welcome.jpeg" alt="Personalised white wedding welcome sign with lanterns and floral decorations" loading="lazy">
+</div>
+<div class="photo-count">Section 5b · Box Welcome Sign</div>
+</div>
+<div class="product-copy">
+<div class="number">06 / Welcome in style</div>
+<h3>Box Welcome Sign</h3>
+<p>Our Box Welcome Sign is personalised and accompanied by two large lanterns and small cans with flowers. It is perfect outside the church or at your reception to welcome your guests as they enter.</p>
+<p class="note">Personalised details and floral touches make this welcome feel like yours.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="Box Welcome Sign">Enquire about this item</a></div>
+</div>
+</article>
+<article class="product-panel" id="panel-6">
+<div class="gallery">
+<div class="media-grid">
+<img src="images/section6-love-letters-1.jpeg" alt="Wedding cake displayed on an illuminated glass cake stand" loading="lazy">
+<img src="images/section6-love-letters-2.jpeg" alt="Large white LOVE letters with wedding flowers, candles and cake stand" loading="lazy">
+</div>
+<div class="photo-count">Section 6 · LOVE Letters & Cake Stand · 2 photos</div>
+</div>
+<div class="product-copy">
+<div class="number">07 / The centrepiece</div>
+<h3>LOVE Letters & Cake Stand</h3>
+<p>Our LOVE letters and cake stand measure 10ft in length and 3½ft high. They are surrounded by candles, with flowers on top of the letter L. Glass shelves sit on top of the letters V and E, with lights and crystals underneath to illuminate your cake. There is also plenty of room for your memory photos.</p>
+<p class="note">A beautiful focal point for your cake, flowers and favourite memories.</p>
+<div class="actions"><a class="btn primary enquiry-link" href="#contact" data-item="LOVE Letters & Cake Stand">Enquire about this item</a></div>
+</div>
+</article>
+</div>
+</div>
 </section>
 <section class="story" id="our-story">
-  <div class="wrap story-grid">
-    <div class="story-mark"><div>Handmade<br><span style="font-style:italic">with love</span><br><small style="font: .7rem Arial,sans-serif;letter-spacing:.18em">DONEGAL, IRELAND</small></div></div>
-    <div><div class="eyebrow">A little about us</div><h2>A husband-and-wife team, with heart in every detail.</h2><p>At Valerations, we believe the little details are what make a wedding feel personal. We hand-make and decorate our hire pieces with care, bringing character, warmth and a little bit of your story to your special day.</p><p>From personalised post boxes to welcome signs and statement LOVE letters, we love helping couples create moments their guests will remember.</p><a class="btn secondary" href="#contact">Let's talk about your day</a></div>
-  </div>
+<div class="wrap story-grid">
+<div class="story-mark">
+<div>Handmade<br><span style="font-style:italic">with love</span><br><small style="font:.7rem Arial,sans-serif;letter-spacing:.18em">DONEGAL, IRELAND</small></div>
+</div>
+<div>
+<div class="eyebrow">A little about us</div>
+<h2>A husband-and-wife team, with heart in every detail.</h2>
+<p>At Valerations, we believe the little details are what make a wedding feel personal. We hand-make and decorate our hire pieces with care, bringing character, warmth and a little bit of your story to your special day.</p>
+<p>From personalised post boxes to welcome signs and statement LOVE letters, we love helping couples create moments their guests will remember.</p>
+<a class="btn secondary" href="#contact">Let's talk about your day</a>
+</div>
+</div>
 </section>
 <section class="contact" id="contact">
-  <div class="wrap">
-    <div class="eyebrow">Let's make it special</div><h2>Tell us about your day</h2>
-    <p>Have a date in mind or a question about one of our pieces? Get in touch to discuss your plans, personalisation and availability.</p>
-    <div class="contact-cards">
-      <div class="contact-card"><small>Call or WhatsApp</small><a href="https://wa.me/353874168929">087 416 8929</a></div>
-      <div class="contact-card"><small>Email</small><a href="mailto:tvpleod@gmail.com">tvpleod@gmail.com</a></div>
-      <div class="contact-card"><small>Location</small><strong>Donegal, Ireland</strong></div>
-    </div>
-    <div class="actions"><a class="btn primary" id="whatsappButton" href="https://wa.me/353874168929?text=Hello%20Valerations%2C%20I%27d%20love%20to%20enquire%20about%20your%20wedding%20hire.">Message us on WhatsApp</a><a class="btn secondary" href="mailto:tvpleod@gmail.com?subject=Wedding%20hire%20enquiry">Send an email</a></div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">Let's make it special</div>
+<h2>Tell us about your day</h2>
+<p>Have a date in mind or a question about one of our pieces? Get in touch to discuss your plans, personalisation and availability.</p>
+<div class="contact-cards">
+<div class="contact-card"><small>Call or WhatsApp</small><a href="https://wa.me/353874168929">087 416 8929</a></div>
+<div class="contact-card"><small>Email</small><a href="mailto:tvpleod@gmail.com">tvpleod@gmail.com</a></div>
+<div class="contact-card"><small>Location</small><strong>Donegal, Ireland</strong></div>
+</div>
+<div class="actions">
+<a class="btn primary" id="whatsappButton" href="https://wa.me/353874168929?text=Hello%20Valerations%2C%20I%27d%20love%20to%20enquire%20about%20your%20wedding%20hire.">Message us on WhatsApp</a>
+<a class="btn secondary" href="mailto:tvpleod@gmail.com?subject=Wedding%20hire%20enquiry">Send an email</a>
+</div>
+</div>
 </section>
 </main>
-<footer><div class="wrap footer-inner"><div><strong style="font-family:Georgia,serif;font-size:1.15rem;font-weight:normal">Valerations</strong><p>Handmade wedding hire in Donegal, Ireland</p></div><div><p>Made with care for your once-in-a-lifetime day.</p><div class="social-links"><a href="https://www.facebook.com/Valerations/" target="_blank" rel="noopener noreferrer">Explore Facebook Moments ↗</a><a href="https://www.tiktok.com/@valerations/video/7652338887406177558" target="_blank" rel="noopener noreferrer">Catch Our TikTok Vibes ↗</a></div></div></div></footer>
+<footer>
+<div class="wrap footer-inner">
+<div>
+<strong style="font-family:Georgia,serif;font-size:1.15rem;font-weight:normal">Valerations</strong>
+<p>Handmade wedding hire in Donegal, Ireland</p>
+</div>
+<div>
+<p>Made with care for your once-in-a-lifetime day.</p>
+<div class="social-links">
+<a href="https://www.facebook.com/Valerations/" target="_blank" rel="noopener noreferrer">Explore Facebook Moments ↗</a>
+<a href="https://www.tiktok.com/@valerations/video/7652338887406177558" target="_blank" rel="noopener noreferrer">Catch Our TikTok Vibes ↗</a>
+</div>
+</div>
+</div>
+</footer>
 <script>
 document.querySelectorAll('.tab').forEach(button=>{
   button.addEventListener('click',()=>{
@@ -196,7 +335,8 @@ menuToggle.addEventListener('click',()=>{
   menuToggle.setAttribute('aria-expanded',String(open));
 });
 navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  navlinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');
+  navlinks.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
 }));
 document.querySelectorAll('.enquiry-link').forEach(link=>{
   link.addEventListener('click',()=>{
@@ -204,41 +344,30 @@ document.querySelectorAll('.enquiry-link').forEach(link=>{
     document.getElementById('whatsappButton').href='https://wa.me/353874168929?text='+encodeURIComponent('Hello Valerations, I would like to enquire about the '+item+'. Please let me know availability and details. Thank you!');
   });
 });
-
-// CMS Content Loader: Automatically loads content published via Decap CMS or local fallback
+// Optional content editor support.
 (function(){
-  fetch('content/site.json')
-    .then(response => response.json())
-    .then(data => {
-      if(!data || !Array.isArray(data.products)) return;
-      data.products.forEach((p,i)=>{
-        const panel=document.getElementById('panel-'+i); if(!panel) return;
-        const title=panel.querySelector('.product-copy h3');
-        const paras=panel.querySelectorAll('.product-copy > p');
-        const img=panel.querySelector('.media-grid img');
-        if(title && typeof p.title==='string') title.textContent=p.title;
-        if(paras[0] && typeof p.description==='string') paras[0].textContent=p.description;
-        if(paras[1] && typeof p.note==='string') paras[1].textContent=p.note;
-        if(img && typeof p.image==='string' && p.image) img.src=p.image;
-        if(img && typeof p.alt==='string') img.alt=p.alt;
-        const count=panel.querySelector('.photo-count');
-        if(count && typeof p.photoLabel==='string') count.textContent=p.photoLabel;
-        const enquiry=panel.querySelector('.enquiry-link');
-        if(enquiry && typeof p.title==='string') enquiry.dataset.item=p.title;
-      });
-    })
-    .catch(e => console.log('Using default inline content.'));
-})();
-
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.reload();
-      });
-    }
+  const KEY='valerationsCmsContentV1';
+  let data;
+  try {data=JSON.parse(localStorage.getItem(KEY)||'null');}
+  catch(e){data=null;}
+  if(!data || !Array.isArray(data.products)) return;
+  data.products.forEach((p,i)=>{
+    const panel=document.getElementById('panel-'+i);
+    if(!panel) return;
+    const title=panel.querySelector('.product-copy h3');
+    const paras=panel.querySelectorAll('.product-copy > p');
+    const img=panel.querySelector('.media-grid img');
+    if(title && typeof p.title==='string') title.textContent=p.title;
+    if(paras[0] && typeof p.description==='string') paras[0].textContent=p.description;
+    if(paras[1] && typeof p.note==='string') paras[1].textContent=p.note;
+    if(img && typeof p.image==='string' && p.image) img.src=p.image;
+    if(img && typeof p.alt==='string') img.alt=p.alt;
+    const count=panel.querySelector('.photo-count');
+    if(count && typeof p.photoLabel==='string') count.textContent=p.photoLabel;
+    const enquiry=panel.querySelector('.enquiry-link');
+    if(enquiry && typeof p.title==='string') enquiry.dataset.item=p.title;
   });
-}
+})();
 </script>
 </body>
 </html>
