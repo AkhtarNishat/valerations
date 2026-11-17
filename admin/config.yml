@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main # or master depending on your default branch
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "content"
+        label: "Product Collection Items"
+        file: "content/site.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            type: list
+            fields:
+              - {label: "Item Title", name: "title", widget: "string"}
+              - {label: "Image File", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "alt", widget: "string"}
+              - {label: "Photo Label Tag", name: "photoLabel", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Note / Highlight", name: "note", widget: "string"}
